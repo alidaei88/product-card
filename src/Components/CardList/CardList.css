@@ -1,0 +1,43 @@
+.list-container {
+    width: 60%;
+    background-color: WhiteSmoke;
+}
+
+.list-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+.list-header-cols {
+    width: 20%;
+    color: #1890ff;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.list-item-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item-cols {
+    width: 20%;
+    font-weight: 700;
+}
+
+.delete-icon {
+    color: red;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.edit-icon {
+    color: green;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.disc-span {
+    background-color: #1890ff;
+    padding: 5px 10px;
+    color: white;
+}

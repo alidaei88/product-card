@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+}
+
+.form-container {
+    width: 40%;
+    background-color: #DCDCDC	;
+    padding: 10px;
+    border-right: 2px solid #ffffff;
+    padding-right: 20px;
+
+    
+}
+
+.input-label {
+    display: block !important;
+    text-align: left;
+    margin-bottom: 40px;
+} 
+
+.slider {
+    margin-bottom: 40px;
+}
+
+.final-price {
+    background-color: #ffffff ;
+    display: flex;
+    min-width: 60px;
+    max-width: 30%;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 4px;
+    box-shadow: 0 5px 10px gray;
+}
+
+ h2 {
+   margin-bottom: 0px;
+   padding: 10px 5px;
+}
+
+.submit-button {
+    width: 80%;
+}

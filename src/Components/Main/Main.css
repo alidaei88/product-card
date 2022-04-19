@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.main-container{
+    margin: auto;
+    margin-top: 10px;
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-container{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+}
