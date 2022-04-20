@@ -6,6 +6,8 @@ const CardForm = ({
   nameValue,
   priceValue,
   sliderValue,
+  amountValue,
+  handleAmountOnchange,
   handleNameOnchange,
   handlePriceOnchange,
   handleSliderOnchange,
@@ -21,6 +23,9 @@ const CardForm = ({
         </Form.Item>
         <Form.Item className='input-label' label="Price" >
           <Input className='input-box' placeholder="Product Cost" value={ priceValue } onChange={handlePriceOnchange} type="number"/>
+        </Form.Item>
+        <Form.Item className='input-label' label="Count of Product" >
+          <Input className='input-box' placeholder="Product amount" value={ amountValue } onChange={handleAmountOnchange} type="number"/>
         </Form.Item>
         <Form.Item className='slider-label' >
           <Slider className='slider' value={sliderValue} onChange={handleSliderOnchange} />

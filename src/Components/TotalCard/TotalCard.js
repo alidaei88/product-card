@@ -4,8 +4,8 @@ import { Card, Col, Row } from 'antd';
 
 const TotalCard = ({ data }) => {
 
-    const totalPrice = data.reduce((total, item) => +item.price + total, 0);
-    const totalPayment = data.reduce((total, item)=> +item.finalPrice+total, 0)
+    const totalPrice = data.reduce((total, item) => (+item.price*item.amount) + total, 0);
+    const totalPayment = data.reduce((total, item)=> (+item.finalPrice)+total, 0)
     const totalDiscount = totalPrice ? Math.floor(100 - ((totalPayment * 100) / totalPrice)) : 0 ;
     
 
