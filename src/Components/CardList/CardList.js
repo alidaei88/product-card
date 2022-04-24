@@ -11,8 +11,8 @@ const CardList = ({ data, setData, setShowModal }) => {
             setData(updatedData)
     }
 
-    const modalHandler = () => {
-        setShowModal(true)
+    const modalHandler = (id) => {
+        setShowModal(id)
     }
 
     
@@ -42,7 +42,7 @@ const CardList = ({ data, setData, setShowModal }) => {
                         <span className="list-item-cols disc-span">{item.disc}%</span>
                         <span className="list-item-cols list-header-icon"> 
                             <span className="delete-icon"><DeleteOutlined onClick={ () => deleteHandler(item.id) }/></span>
-                            <span className="edit-icon"><EditOutlined onClick={ modalHandler }/></span>
+                            <span className="edit-icon"><EditOutlined onClick={()=> modalHandler(item.id) }/></span>
                         </span>
                     </List.Item>
                 )}

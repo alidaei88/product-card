@@ -15,7 +15,7 @@ const Main = () => {
     const [priceValue, setPriceValue] = useState(0);
     const [sliderValue, setSliderValue] = useState(0);
     const [amountValue, setAmountValue] = useState(1)
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState()
     const [data, setData] = useState([])
 
     // const finalCost = priceValue - ((priceValue * sliderValue) / 100)
