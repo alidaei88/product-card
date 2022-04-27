@@ -17,6 +17,7 @@ const Main = () => {
     const [amountValue, setAmountValue] = useState(1)
     const [showModal, setShowModal] = useState()
     const [data, setData] = useState([])
+    const [modalData, setModalData] = useState()
 
     // const finalCost = priceValue - ((priceValue * sliderValue) / 100)
     const finalCost = CalcDiscount(priceValue, sliderValue, amountValue)
@@ -43,11 +44,7 @@ const Main = () => {
             } else alert("please insert Product's Price")
 
         } else alert("please insert Product")
-
-
     }
-
-
 
     return (
         <div className="main-container">
@@ -56,15 +53,15 @@ const Main = () => {
                 priceValue={priceValue}
                 amountValue={amountValue}
                 sliderValue={sliderValue}
-                handleNameOnchange={(e) => setNameValue(e.target.value)}
-                handlePriceOnchange={(e) => setPriceValue(e.target.value)}
-                handleSliderOnchange={(value) => setSliderValue(value)}
-                handleAmountOnchange={(e) => setAmountValue(e.target.value)}
+                setNameValue = { setNameValue }
+                setPriceValue = { setPriceValue }
+                setAmountValue={ setAmountValue }
+                setSliderValue={ setSliderValue }
                 onFinishHandle={onFinishHandle}
                 finalCost={finalCost}
             />
-            <MyModal isModalVisible={ showModal } setShowModal={setShowModal} />
-            <CardList data={data} setData={ setData } setShowModal={setShowModal} />
+            <MyModal isModalVisible={ showModal } setShowModal={setShowModal} modalData={ modalData } />
+            <CardList data={data} setData={ setData } setShowModal={setShowModal} setModalData={ setModalData } />
             <TotalCard data= { data } />
         </div>
     )

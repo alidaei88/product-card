@@ -4,15 +4,16 @@ import { List } from 'antd';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons'
 import FormItem from "antd/lib/form/FormItem";
 
-const CardList = ({ data, setData, setShowModal }) => {
+const CardList = ({ data, setData, setShowModal, setModalData }) => {
 
     const deleteHandler = (id) => {
      const updatedData = data.filter(item => item.id!==id)   
             setData(updatedData)
     }
 
-    const modalHandler = (id) => {
-        setShowModal(id)
+    const modalHandler = (item) => {
+        setShowModal(true)
+        setModalData(item)
     }
 
     
@@ -42,7 +43,7 @@ const CardList = ({ data, setData, setShowModal }) => {
                         <span className="list-item-cols disc-span">{item.disc}%</span>
                         <span className="list-item-cols list-header-icon"> 
                             <span className="delete-icon"><DeleteOutlined onClick={ () => deleteHandler(item.id) }/></span>
-                            <span className="edit-icon"><EditOutlined onClick={()=> modalHandler(item.id) }/></span>
+                            <span className="edit-icon" onClick={()=> modalHandler(item) }><EditOutlined /></span>
                         </span>
                     </List.Item>
                 )}
