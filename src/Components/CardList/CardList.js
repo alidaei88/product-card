@@ -39,7 +39,7 @@ const CardList = ({ data, setData, setShowModal, setModalData }) => {
                     <List.Item className="list-item-container">
                         <span className="list-item-cols">{item.name}</span>
                         <span className="list-item-cols">{item.price}</span>
-                        <span className="list-item-cols">{item.amount}</span>
+                        <span className="list-item-cols">{item.amount}X</span>
                         <span className="list-item-cols disc-span">{item.disc}%</span>
                         <span className="list-item-cols list-header-icon"> 
                             <span className="delete-icon"><DeleteOutlined onClick={ () => deleteHandler(item.id) }/></span>

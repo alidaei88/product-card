@@ -5,7 +5,8 @@ import CardList from "../CardList/CardList";
 import CardForm from "../CardForm/CardForm";
 import TotalCard from "../TotalCard/TotalCard";
 import MyModal from "../MyMdal/MyModal";
-import { CalcDiscount } from '../../Modules/Calculate'
+import { CalcDiscount } from '../../Modules/Calculate';
+import { Modal } from 'antd'
  
 
 
@@ -46,6 +47,21 @@ const Main = () => {
         } else alert("please insert Product")
     }
 
+    const onEditFinishHandler = (values) => {
+        // console.log("value:", values, "modalDat:",modalData.id)
+          const newEditObj = {...values,
+                           id: modalData.id
+        }
+        
+        const updatedList = data.filter((item) => item.id !== modalData.id)
+        const updatedData = [...updatedList, newEditObj]
+
+        setData(updatedData)
+        setShowModal(false)
+        setModalData(null)
+        Modal.destroyAll()
+    }
+
     return (
         <div className="main-container">
             <CardForm
@@ -60,7 +76,12 @@ const Main = () => {
                 onFinishHandle={onFinishHandle}
                 finalCost={finalCost}
             />
-            <MyModal isModalVisible={ showModal } setShowModal={setShowModal} modalData={ modalData } />
+            <MyModal
+                isModalVisible={showModal}
+                setShowModal={setShowModal}
+                modalData={modalData}
+                onEditFinishHandler={ onEditFinishHandler }
+            />
             <CardList data={data} setData={ setData } setShowModal={setShowModal} setModalData={ setModalData } />
             <TotalCard data= { data } />
         </div>
